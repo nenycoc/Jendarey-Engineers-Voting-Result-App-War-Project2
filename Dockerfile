@@ -27,7 +27,7 @@ CMD ["catalina.sh", "run"]
 # Start the Tomcat container
 # EveryThing looks good edit
 
-
+# Docker me
 # docker-compose up
 # docker exec -it ac7 bash 
 # ls /usr/local/tomcat/logs
