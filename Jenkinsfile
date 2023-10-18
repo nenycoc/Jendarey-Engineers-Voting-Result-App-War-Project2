@@ -69,7 +69,7 @@ pipeline {
         stage('7-Deploy to UAT') {
             steps {
                 echo 'Jenkins is about to deploy our application to User Acceptance Testing environment'
-                deploy adapters: [tomcat9(credentialsId: '3778794c-9691-47d5-95cf-17b9fd7ca6d9', path: '', url: 'http://54.236.209.233:8080/')], contextPath: null, war: 'target/*.war'
+                deploy adapters: [tomcat9(credentialsId: '3778794c-9691-47d5-95cf-17b9fd7ca6d', path: '', url: 'http://54.236.209.233:8080/')], contextPath: null, war: 'target/*.war'
             }
         }
         
