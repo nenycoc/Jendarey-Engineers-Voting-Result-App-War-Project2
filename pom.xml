@@ -71,7 +71,7 @@
     </distributionManagement>
     
     <build>
-        <finalName>votingapp</finalName>
+        <finalName>votingwebapp2</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
