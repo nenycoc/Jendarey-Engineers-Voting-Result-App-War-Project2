@@ -1,15 +1,29 @@
-# Use the official Tomcat image as the base image
-FROM tomcat:10.1.13-jdk17
+# Stage 1: Build the application
+FROM ubuntu AS builder
+
+# Install required dependencies
+RUN apt-get update && apt-get install -y openjdk-17-jdk
+RUN apt-get install -y maven git
+
+# Clone the application repository
+RUN git clone https://github.com/JendareyTechnologies/Jendarey-Engineers-Voting-Result-App-War-Project2.git /app
+
+# Build the application using Maven
+WORKDIR /app
+RUN mvn clean package
+
+# Stage 2: Create the final image
+FROM tomcat:10.1.14-jdk17
 
 # Set metadata for the image
 LABEL author="Akin"
-LABEL project="jendarey-voting-app-project"
+LABEL project="jendarey-voting-two-project"
 
 # Remove the default Tomcat applications
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy the .war file into the Tomcat webapps directory
-COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
+# Copy the built WAR file from the builder stage
+COPY --from=builder /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
 
 # Expose port 8080 for the application
 EXPOSE 8080
