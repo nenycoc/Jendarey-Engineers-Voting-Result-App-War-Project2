@@ -1,4 +1,4 @@
-# Stage 1: Build the application
+# Stage 1: Build the application yy
 FROM ubuntu AS builder
 
 # Install required dependencies
