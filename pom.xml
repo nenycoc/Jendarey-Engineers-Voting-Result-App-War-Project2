@@ -19,7 +19,7 @@
 
     <properties>
         <java.version>17</java.version>
-        <sonar.host.url>http://23.22.111.5:9000/</sonar.host.url>
+        <sonar.host.url>http://44.201.144.154:9000/</sonar.host.url>
         <sonar.login>admin</sonar.login>
         <sonar.password>admin123</sonar.password>
     </properties>
@@ -59,7 +59,7 @@
         <repository>
             <id>nexus</id>
             <name>Jendarey Technologies Releases Nexus Repository</name>
-            <url>http://54.196.175.137:8081/jendarey/repository/vote-release/
+            <url>http://52.55.160.144:8081/jendarey/repository/vote-release/
 
 </url>
         </repository>
@@ -67,7 +67,7 @@
         <snapshotRepository>
             <id>nexus</id>
             <name>Jendarey Technologies Snapshot Nexus Repository</name>
-            <url>http://54.196.175.137:8081/jendarey/repository/vote-snapshot/</url> 
+            <url>http://52.55.160.144:8081/jendarey/repository/vote-snapshot/</url> 
         </snapshotRepository>
     </distributionManagement>
     
